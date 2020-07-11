@@ -1,0 +1,430 @@
+
+
+.procedure {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative
+}
+
+.procedure *,
+.procedure :after,
+.procedure :before {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit
+}
+
+.procedure:not(.procedure--horizontal):before {
+	background-color: #ddd;
+	bottom: 0;
+	content: '';
+	left: 50%;
+	margin-left: -2px;
+	position: absolute;
+	top: 0;
+	width: 4px;
+	z-index: 1
+}
+
+.procedure__wrap {
+	overflow: hidden;
+	position: relative;
+	z-index: 2
+}
+
+.procedure__item {
+	font-size: 16px;
+	font-size: 1rem;
+	padding: .625rem 2.5rem .625rem 0;
+	position: relative;
+	width: 50%;
+	z-index: 2
+}
+
+.procedure__item:after {
+	background-color: #2d2d2d;
+	border: 2px solid #bfbfbf;
+	border-radius: 6px;
+	content: '';
+	height: 20px;
+	position: absolute;
+	right: -10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+	width: 20px;
+	z-index: 1
+}
+
+.procedure__item.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	opacity: 0
+}
+
+.procedure__item.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn
+}
+
+.procedure__item--left {
+	left: 0
+}
+
+.procedure__item--right {
+	left: 50%;
+	padding: .625rem 0 .625rem 2.5rem
+}
+
+.procedure__item--right:after {
+	left: -10px
+}
+
+.procedure__item--right .procedure__content:before {
+	border-bottom: 10px solid transparent;
+	border-right: 12px solid #ccc;
+	border-left: none;
+	border-top: 10px solid transparent;
+	left: -12px
+}
+
+.procedure__item--right .procedure__content:after {
+	border-bottom: 9px solid transparent;
+	border-right: 11px solid #fff;
+	border-left: none;
+	border-top: 9px solid transparent;
+	left: -10px
+}
+
+.procedure__content {
+	background-color: #fff;
+	border: 2px solid #bfbfbf;
+	border-radius: 30px;
+	color: #333;
+	display: block;
+	padding: 1.25rem;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+.procedure__content:after,
+.procedure__content:before {
+	content: '';
+	height: 0;
+	position: absolute;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+	width: 0
+}
+
+.procedure__content:before {
+	border-bottom: 10px solid transparent;
+	border-left: 12px solid #ccc;
+	border-top: 10px solid transparent;
+	right: -12px;
+	z-index: 1
+}
+
+.procedure__content:after {
+	border-bottom: 9px solid transparent;
+	border-left: 11px solid #fff;
+	border-top: 9px solid transparent;
+	right: -10px;
+	z-index: 2
+}
+
+.procedure__content:hover {
+	border: 2px solid #2d2d2d;
+	transition: all 0.5s ease-in-out;
+}
+
+.procedure__content:hover .ico-circle {
+  background-color: #fff;
+  color: #2d2d2d;
+  box-shadow: 0 0 0 5px #bfbfbf;
+  transition: all 500ms ease;
+}
+
+.procedure__content h2 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin: 0 0 .625rem;
+	color: #ffffff;
+}
+
+.procedure__content p {
+	font-size: .9375rem;
+	line-height: 1.5;
+	margin-bottom: 10px;
+	color: #ffffff;
+}
+
+.procedure--horizontal {
+	font-size: 0;
+	padding: 0 3.15rem;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+.procedure--horizontal .procedure-divider {
+	background-color: #bfbfbf;
+	display: block;
+	height: 4px;
+	left: 40px;
+	position: absolute;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 40px;
+	z-index: 1
+}
+
+.procedure--horizontal .procedure__items {
+	-webkit-transition: all .8s;
+	-o-transition: all .8s;
+	transition: all .8s;
+	will-change: transform
+}
+
+.procedure--horizontal .procedure__item {
+	display: inline-block;
+	left: 0;
+	padding: 0 0 2.5rem;
+	position: relative;
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+	vertical-align: top;
+	white-space: normal
+}
+
+.procedure--horizontal .procedure__item:after {
+	left: 50%;
+	right: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	top: 100%
+}
+
+.procedure--horizontal .procedure__item .procedure__item__inner {
+	display: table;
+	height: 100%;
+	width: 100%
+}
+
+.procedure--horizontal .procedure__item .procedure__content__wrap {
+	display: table-cell;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom
+}
+
+.procedure--horizontal .procedure__item .procedure__content:before {
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #bfbfbf;
+	left: 50%;
+	right: auto;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	top: 100%
+}
+
+.procedure--horizontal .procedure__item .procedure__content:after {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+	left: 50%;
+	right: auto;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	top: 100%
+}
+
+.procedure--horizontal .procedure__item--bottom {
+	padding: 2.5rem 0 0
+}
+
+.procedure--horizontal .procedure__item--bottom:after {
+	top: 0
+}
+
+.procedure--horizontal .procedure__item--bottom .procedure__content__wrap {
+	vertical-align: top
+}
+
+.procedure--horizontal .procedure__item--bottom .procedure__content:before {
+	border-bottom: 12px solid #bfbfbf;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: none;
+	bottom: 100%;
+	top: auto
+}
+
+.procedure--horizontal .procedure__item--bottom .procedure__content:after {
+	border-bottom: 10px solid #fff;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: none;
+	bottom: 100%;
+	top: auto
+}
+
+.procedure-nav-button {
+	background: #2d2d2d;
+	border: 2px solid #bfbfbf;
+	border-radius: 16px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	cursor: pointer;
+	display: block;
+	height: 40px;
+	width: 40px;
+	outline: 0;
+	position: absolute;
+	text-indent: -9999px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+	z-index: 10;
+	transition: all 0.5s ease;
+}
+
+.procedure-nav-button:disabled {
+	opacity: .75;
+	pointer-events: none;
+	transition: all 500ms ease;
+}
+
+.procedure-nav-button:hover {
+	box-shadow: 0 0 0 5px #888888;
+	transition: all 500ms ease;
+}
+
+.procedure-nav-button:active {
+	box-shadow: 0 0 0 10px #888888;
+	transition: all 500ms ease;
+}
+
+.procedure-nav-button:before {
+	background-position: center center;
+	background-repeat: no-repeat;
+	content: '';
+	display: block;
+	height: 14px;
+	left: 50%;
+	position: absolute;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	top: 50%;
+	width: 8px
+}
+
+.procedure-nav-button--prev {
+	left: 0
+}
+
+.procedure-nav-button--prev:before {
+	background-image: url(arrow-left.svg)
+}
+
+.procedure-nav-button--next {
+	right: 0
+}
+
+.procedure-nav-button--next:before {
+	background-image: url(arrow-right.svg)
+}
+
+.procedure--mobile {
+	padding: 0
+}
+
+.procedure--mobile:before {
+	left: 10px!important;
+	margin: 0!important
+}
+
+.procedure--mobile .procedure__item {
+	left: 0;
+	padding-left: 40px;
+	padding-right: 0;
+	width: 100%
+}
+
+.procedure--mobile .procedure__item:after {
+	left: 2px;
+	margin: 0
+}
+
+.procedure--mobile .procedure__item .procedure__content:before {
+	left: -12px;
+	border-bottom: 12px solid transparent;
+	border-right: 12px solid #ccc;
+	border-left: none;
+	border-top: 12px solid transparent
+}
+
+.procedure--mobile .procedure__item .procedure__content:after {
+	left: -10px;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid #fff;
+	border-left: none;
+	border-top: 10px solid transparent
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+		top: 70px
+	}
+	100% {
+		opacity: 1;
+		top: 0
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		top: 70px
+	}
+	100% {
+		opacity: 1;
+		top: 0
+	}
+}
+
+@-webkit-keyframes liftUp {
+	0% {
+		top: 0
+	}
+	100% {
+		top: -15px
+	}
+}
+
+@keyframes liftUp {
+	0% {
+		top: 0
+	}
+	100% {
+		top: -15px
+	}
+}
+
+
+/*# sourceMappingURL=procedure.min.css.map */
+
