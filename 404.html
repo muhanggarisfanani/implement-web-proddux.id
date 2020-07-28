@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
-    <title>404 Not Found</title>
+    
+    <meta charset="utf-8">
+    <title>Error 404: Not Found</title>
+	  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/favicon.png" rel="apple-touch-icon">
+    
     <style>
-      ul {
-        list-style-type: none;
-        text-decoration: none;
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&display=swap');
+
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+        color: white;
+        background-image: url(img/bg.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        scroll-behavior: smooth;
         overflow: hidden;
       }
-      li {
-        font-size: 25px;
-        float: right;
-        border-bottom: 1px solid white;
-        margin-top: 12px;
-      }
-      li a {
-        color: white;
+      a {
+        font-size: 20px;
         text-decoration: none;
-        display: block;
-        margin-left:35px;
-        margin-bottom: 15px;
-        align-items: center;
-        top: 50%;
+        color: white;
+        transition: ease-in-out 250ms;
       }
-      .center {
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: ;
-        width: 50%;
+      a:hover {
+        font-size: 18px;
+        transition: ease-in-out 250ms;
       }
+      a:active {
+        color: gray;
+        transition: ease-in-out 250ms;
+      }
+
       /* CLASS */
       .flex-horizontal {
         display: flex;
@@ -41,60 +50,55 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        margin: 5px;
-        margin-top: 80px;
-        margin-bottom: 0px;
       }
       .flex-vertical {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height:fit-content;
+        height:100vh;
+        vertical-align: middle;
       }
       .flex-vertical > div {
-        margin: 10px;
         text-align: center;
         font-size: 30px;
         height: fit-content;
       }
       .circle {
         /* untuk border lingkaran logo */
+        width: 80px;
+        height:auto;
         border:7px solid white;
-        padding: 25px;
-        border-spacing: 10px;
-        height:100px;
-        border-radius:100%;
-        -moz-border-radius:100%;
-        -webkit-border-radius:100%;
-        width:100px;
+        padding: 20px;
+        border-radius:50%;
+        transition: ease-in-out 250ms;
+      }
+      .circle:hover {
+        border-radius: 25%;
+        transition: ease-in-out 250ms;
+      }
+      .desc {
+        color:white;
+        font-size: 15px;
+        margin: 20px 0 0 0;
       }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body style="background-color: rgb(60, 60, 60); font-family: sans-serif; color: white;">
-    <ul>
-      <li><a href="homepage.html"><img src="img/home-5-64.png" alt="home" style="width: 20px;height: auto;"></a></li>
-      <li><a href=#work><b>ABOUT</b></a></li>
-      <li><a href=#work><b>PORTOFOLIO</b></a></li>
-      <li><a href=#work><b>PROCEDURE</b></a></li>
-      <li><a href=#work><b>SERVICE</b></a></li>
-      <li><a href=#work><b>WORK</b></a></li>
-      <li style="float: left; border:none; margin-top:0px;"><a href="homepage.html">
-        <img src="img/new-long-2.png" alt="proddux" width="auto" height="50px"></a>
-      </li>
-    </ul>
+
+  <body>
     <div class="flex-vertical">
       <div class="flex-horizontal">
-        <div><img src="img/new-square-6.png" alt="logo" style="width: 110px; height: auto;" class="circle"></div>
-        <div><h1 style="margin:0px; margin-left: 5px; font-size: 115px;">
-          404<br></h1><h2 style="font-size:30px; margin:0px;">NOT FOUND</h2>
+        <div><img src="img/new-square-6.png" alt="logo" class="circle"></div>
+        <div>
+          <h1 style="margin:0 0 0 25px; font-size: 100px;">404</h1>
+          <h2 style="font-size:20px; margin:0 0 0 25px;">NOT FOUND</h2>
         </div>
       </div>
-      <div><p style="color:white; font-size: 25px; margin-top: 0px;">
-        Halaman yang Anda cari tidak ditemukan<br>
-        Kembali ke <b>beranda</b> atau <b>contact us</b>
-      </p></div>
+      <div>
+        <p class="desc">"Halaman tidak ditemukan"<br>
+          Kembali ke <i><a href="#">beranda</a></i> atau <i><a href="#">contact us</a></i></p>
+      </div>
     </div>
   </body>
+
 </html>
