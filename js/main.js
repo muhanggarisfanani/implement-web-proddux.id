@@ -1,47 +1,19 @@
 (function ($) {
-	
 	"use strict";
 
 	var nav = $('nav');
 	var navHeight = nav.outerHeight();
 
-	var wowAnimation = function() {
-		var wow = new WOW(
-			{
-				animateClass: 'animated',
-				offset: 150,
-				callback: function(box) {
-					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-				}
-			});
-			wow.init();
-		}
-
-	wowAnimation();
-	
-	procedure(document.querySelectorAll('.procedure'), {
-		forceVerticalMode: 700,
-		mode: 'horizontal',
-		verticalStartPosition: 'left',
-		visibleItems: 3
-	});
-	
-	$('.navbar-toggler').on('click', function() {
-		if( ! $('#mainNav').hasClass('navbar-reduce')) {
-			$('#mainNav').addClass('navbar-reduce');
-		}
-	})
-
-	// Preloader
+	// Preloader - Menghapus preloader setelah web terload sempurna
 	$(window).on('load', function () {
-		if ($('#preloader').length) {
-			$('#preloader').delay(100).fadeOut('slow', function () {
+		if ($('#preloader-bg').length) {
+			$('#preloader-bg').delay(0).fadeOut('slow', function () {
 				$(this).remove();
 			});
 		}
 	});
 
-	// Back to top button
+	// Back to top button - Memunculkan tombol scroll jika halaman sudah discroll minimal 100 satuan - Menscroll jika diklik
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
 			$('.back-to-top').fadeIn('slow');
@@ -52,19 +24,6 @@
 	$('.back-to-top').click(function(){
 		$('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
 		return false;
-	});
-
-	/*--/ Star ScrollTop /--*/
-	$('.scrolltop-mf').on("click", function () {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 1000);
-	});
-
-	/*--/ Star Counter /--*/
-	$('.counter').counterUp({
-		delay: 15,
-		time: 2000
 	});
 
 	/*--/ Star Scrolling nav /--*/
@@ -85,6 +44,12 @@
 	$('.js-scroll').on("click", function () {
 		$('.navbar-collapse').collapse('hide');
 	});
+	
+	$('.navbar-toggler').on('click', function() {
+		if( ! $('#mainNav').hasClass('navbar-reduce')) {
+			$('#mainNav').addClass('navbar-reduce');
+		}
+	})
 
 	// Activate scrollspy to add active class to navbar items on scroll
 	$('body').scrollspy({
@@ -93,7 +58,8 @@
 	});
 	/*--/ End Scrolling nav /--*/
 
-	/*--/ Navbar Menu Reduce /--*/
+	/*--/ Navbar Menu Reduce /--*/ 
+	// untuk transparan ketika diatas, ada warnanya ketika di scroll
 	$(window).trigger('scroll');
 	$(window).on('scroll', function () {
 		var pixels = 50; 
@@ -117,24 +83,33 @@
 		var typed_strings = $('.text-slider-items').text();
 		var typed = new Typed('.text-slider', {
 			strings: typed_strings.split(','),
-			typeSpeed: 80,
+			typeSpeed: 50,
 			loop: true,
-			backDelay: 1100,
-			backSpeed: 30
+			backDelay: 750,
+			backSpeed: 10
 		});
 	}
 
-	/*--/ Testimonials owl /--*/
-	$('#testimonial-mf').owlCarousel({
-		margin: 20,
-		autoplay: true,
-		autoplayTimeout: 4000,
-		autoplayHoverPause: true,
-		responsive: {
-			0: {
-				items: 1,
-			}
+	/*--/ Star Procedure Carousel /--*/
+	var wowAnimation = function() {
+		var wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset: 150,
+				callback: function(box) {
+					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+				}
+			});
+			wow.init();
 		}
+
+	wowAnimation();
+	
+	procedure(document.querySelectorAll('.procedure'), {
+		forceVerticalMode: 700,
+		mode: 'horizontal',
+		verticalStartPosition: 'left',
+		visibleItems: 3
 	});
 
 })(jQuery);
