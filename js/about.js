@@ -15,9 +15,12 @@
 
     // Inisiasi owl-carousel
     $(".owl-carousel").owlCarousel({
-        loop: true,
+		autoplay: true,
+		autoPlay: 2500,
+		autoplayHoverPause: true,
+		loop: true,
         margin: 30,
-        nav: true,
+		nav: true,
         pagination: true,
         responsive: {
         0: {
