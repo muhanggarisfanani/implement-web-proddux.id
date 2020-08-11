@@ -51,36 +51,9 @@ a:hover {
   color: #4e4e4e;
 }
 
-.box-shadow,
-.paralax-mf,
-.service-box,
-.work-box,
-.card-blog {
-  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
-}
-
 .box-shadow-a,
 .button:hover {
   box-shadow: 0 0 0 4px #bfbfbf;
-}
-
-.display-5 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  line-height: 1.1;
-}
-
-.display-6 {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.1;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
-  margin-right: 4px;
-  overflow: hidden;
 }
 
 .bg-image {
@@ -92,21 +65,6 @@ a:hover {
 
 .overlay-mf {
   background-color: #2d2d2d;
-}
-
-.overlay-mf {
-  position: absolute;
-  top: 0;
-  left: 0px;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  opacity: .7;
-}
-
-.paralax-mf {
-  position: relative;
-  padding: 8rem 0;
 }
 
 .display-table {
@@ -235,7 +193,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
   .flex-container .flex-story-text {
       width: 100%;
       text-align: justify;
@@ -883,4 +840,75 @@ footer .table td, footer .table th {
 .list-ico span {
   color: #2d2d2d;
   margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+  .box-shadow-full {
+    padding: 3rem;
+  }
+
+  .navbar-b.navbar-trans .nav-item,
+  .navbar-b.navbar-reduce .nav-item {
+    padding-left: 10px;
+  }
+
+  .navbar-b.navbar-trans .nav-link:before,
+  .navbar-b.navbar-reduce .nav-link:before {
+    margin-left: 18px;
+  }
+
+  .intro .intro-title {
+    font-size: 3.5rem;
+  }
+
+  .intro .intro-subtitle {
+    font-size: 2rem;
+  }
+
+  .intro-single .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonial-box .description {
+    padding: 0 5rem;
+  }
+
+  .post-box,
+  .form-comments,
+  .box-comments,
+  .widget-sidebar {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bg-image {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .nav-socials {
+    padding-bottom: 0.75rem;
+  }
+
+  .back-to-top {
+    bottom: 15px;
+  }
+}
+
+@media (max-width:548px) {
+  footer, .footer3 a {
+    font-size: 12px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+  footer .footer1 {
+    margin: 25px 0 5px 0;
+  }
+  footer .footer3 {
+    margin: 50px 0 5px 0;
+  }
 }
