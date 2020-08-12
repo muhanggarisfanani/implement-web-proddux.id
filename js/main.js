@@ -1,10 +1,10 @@
-(function($) {
-    "use strict";
+(function ($) {
+	"use strict";
 
-    var nav = $('nav');
+	var nav = $('nav');
 	var navHeight = nav.outerHeight();
 
-    // Preloader - Menghapus preloader setelah web terload sempurna
+	// Preloader - Menghapus preloader setelah web terload sempurna
 	$(window).on('load', function () {
 		if ($('#preloader-bg').length) {
 			$('#preloader-bg').delay(0).fadeOut('slow', function () {
@@ -13,29 +13,7 @@
 		}
 	});
 
-    // Inisiasi owl-carousel
-    $(".owl-carousel").owlCarousel({
-		autoplay: true,
-		autoPlay: 2500,
-		autoplayHoverPause: true,
-		loop: true,
-        margin: 30,
-		nav: true,
-        pagination: true,
-        responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 1
-        },
-        1000: {
-            items: 1
-        }
-        }
-    });
-
-    // Back to top button - Memunculkan tombol scroll jika halaman sudah discroll minimal 100 satuan - Menscroll jika diklik
+	// Back to top button - Memunculkan tombol scroll jika halaman sudah discroll minimal 100 satuan - Menscroll jika diklik
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 100) {
 			$('.back-to-top').fadeIn('slow');
@@ -100,29 +78,15 @@
 		}
 	});
 
-	/*--/ Star Typed /--*/
-	if ($('.text-slider').length == 1) {
-		var typed_strings = $('.text-slider-items').text();
-		var typed = new Typed('.text-slider', {
-			strings: typed_strings.split(','),
-			typeSpeed: 50,
-			loop: true,
-			backDelay: 750,
-			backSpeed: 10
-		});
-    }
-    
-    var wowAnimation = function() {
-		var wow = new WOW(
-			{
-				animateClass: 'animated',
-				offset: 150,
-				callback: function(box) {
-					console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-				}
-			});
-			wow.init();
-		}
-
-	wowAnimation();
 })(jQuery);
+
+//This is sort of CSS-only; the JS below just sticks a span around each letter, so i can animate each independantly.
+//(oh for an :nth-letter selector!)
+const labels = document.querySelectorAll('.label');
+labels.forEach(label => {
+  const chars = label.textContent.split('');
+  label.innerHTML = '';
+  chars.forEach(char => {
+    label.innerHTML += `<span>${char === ' ' ? '&nbsp' : char}</span>`;
+  });
+})
