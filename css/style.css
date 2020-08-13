@@ -192,6 +192,15 @@ a:hover {
   padding: 0px 30px;
 }
 
+.story-img {
+  max-width: 75%;
+  height: auto;
+}
+
+.story-logo {
+  border-radius: 1rem;
+}
+
 @media only screen and (max-width: 768px) {
   .flex-container .flex-story-text {
       width: 100%;
