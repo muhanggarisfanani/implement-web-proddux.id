@@ -56,8 +56,14 @@
 	</nav>
 	<!--/ Nav End /-->
 
+    <!--/ Title Star /-->
+    <div class="title-page">
+        <h1>Form Request Proyek</h1>
+    </div>
+    <!--/ Title End /-->
+
     <!--/ Form star /-->
-    <div class="form">
+    <form class="form" action="php/form-process.php" method="POST">
 
 		<div class="form_box">
 			<div class="form_title">
@@ -78,12 +84,12 @@
 				<label for="email" class="form__label">Email *</label>
 			</div>
 			<div class="form__group field">
-				<input type="input" class="form__field" placeholder="Kontak" name="kontak" id='kontak' required />
+				<input type="input" class="form__field" placeholder="Kontak" name="kontak" id='kontak' autocomplete="off" required />
 				<label for="kontak" class="form__label">Kontak * (WA atau Line)</label>
 			</div>
 			<div>
 				<label id="ismahasiswa" class="toggle-control">
-					<input type="checkbox">
+					<input type="checkbox" id="mahasiswa" name="mahasiswa" value="Ya">
 					<span class="control"></span>
 				</label>
 				<label for="ismahasiswa" class="label_ismahasiswa">Apakah Anda seorang mahasiswa atau pelajar?</label>
@@ -101,33 +107,33 @@
 				<label for="jenisproyek" class="form__label">Jenis Proyek *</label>
 			</div>
 			<div class="form__group field">
-				<textarea class="form__field" id="detailspek" rows="10" placeholder="Detail Spesifikasi" required></textarea>
+				<textarea class="form__field" id="detailspek" name="detailspek" rows="10" placeholder="Detail Spesifikasi" required></textarea>
 				<label for="detailspek" class="form__label">Detail Spesifikasi *</label>
 			</div>
 			<div class="bulgy-radios" role="radiogroup" aria-labelledby="bulgy-radios-label">
 				<h2 id="bulgy-radios-label">Sudah memiliki desain? *</h2>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options1" value="Sudah ada" checked/>
 				  <span class="radio"></span>
 				  <span class="label">Sudah ada</span>
 				</label>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options1" value="Belum, tapi nanti ada"/>
 				  <span class="radio"></span>
 				  <span class="label">Belum, tapi nanti ada</span>
 				</label>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options1" value="Belum, sekalian buatkan saja"/>
 				  <span class="radio"></span>
 				  <span class="label">Belum, sekalian buatkan saja</span>
 				</label>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options1" value="Tidak memerlukan desain"/>
 				  <span class="radio"></span>
 				  <span class="label">Tidak memerlukan desain</span>
 				</label>
 			  </div>			  
-		</div>
+			</div>
 
 		<div class="form_box">
 			<div class="form_title">
@@ -150,12 +156,12 @@
 			<div class="bulgy-radios" role="radiogroup" aria-labelledby="bulgy-radios-label">
 				<h2 id="bulgy-radios-label">Bisa melakukan pertemuan langsung? (Area Bandung Raya) *</h2>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options2" value="Bisa"/>
 				  <span class="radio"></span>
 				  <span class="label">Bisa</span>
 				</label>
 				<label>
-				  <input type="radio" name="options" />
+				  <input type="radio" name="options2" value="Tidak" checked/>
 				  <span class="radio"></span>
 				  <span class="label">Tidak</span>
 				</label>
@@ -174,11 +180,11 @@
 				<input type="checkbox" required >
 				<span class="control"></span>
 			</label>
-			<label for="agreement" class="label_ismahasiswa">Seluruh data yang saya masukkan benar. Dan saya menyetujui persyaratan dan ketentuan yang berlaku</label>
+			<label for="agreement" class="label_ismahasiswa">Seluruh data yang saya masukkan benar.</label>
 		</div>
 		<button type="submit" class="btn-submit">Kirim Request</button>
 
-	</div>
+	</form>
     <!--/ Form End /-->
 
 	<!--/ Footer Star /-->

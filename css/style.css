@@ -601,6 +601,30 @@ a:hover {
 }
 
 /*======================================
+//--//-->   TITLE-PAGE
+======================================*/
+
+.title-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding: 100px 0 5% 0;
+}
+
+.title-page h1 {
+  font-family: 'Chelsea Market', cursive;
+  color: #F5AB35;
+}
+
+@media (max-width: 508px) {
+  
+  .title-page h1 {
+    font-size: 24px;
+  }
+}
+
+/*======================================
 //--//-->   FORM
 ======================================*/
 
@@ -897,6 +921,10 @@ a:hover {
   color: white;
   border-radius: 20px;
   transition: 500ms ease-in-out;
+}
+
+.btn-submit:hover {
+  cursor:pointer;
 }
 
 /*======================================
